@@ -60,6 +60,12 @@
 
 .goal-card {
   @apply transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1;
+  background: linear-gradient(
+    to bottom right,
+    hsl(var(--card) / 0.8),
+    hsl(var(--card) / 0.4)
+  );
+  backdrop-filter: blur(8px);
 }
 
 .category-badge {
@@ -68,4 +74,34 @@
 
 .progress-bar {
   @apply h-2 rounded-full overflow-hidden transition-all duration-300 ease-out;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.2s ease-out;
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+@keyframes scale-in {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
